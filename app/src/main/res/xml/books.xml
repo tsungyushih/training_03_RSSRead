@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <books>
+        <book id="P631" name="Android 2.X 應用程式開發實戰" publishers="碁峯" price="580">
+            <auther name="林城"/>
+        </book>
+        <book id="P697" name="深入淺出 Android 遊戲程式開發範例大全" publishers="博碩文化" price="620">
+            <auther name="吳亞峰"/>
+            <auther name="蘇亞光"/>
+        </book>
+        <book id="XP6037" name="Silverlight 4 商業級應用程式開發" publishers="悅知文化" price="590">
+            <auther name="Frank LaVigne. Cameron Albert"/>
+        </book>
+    </books>
+</PreferenceScreen>
