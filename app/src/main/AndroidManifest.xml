@@ -9,13 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <!--以下兩行重要!!!在INTENT的對象為Class時，要在<application的節點中寫註冊代碼-->
+        <activity android:name =".UseDomParse"/>
+        <activity android:name =".UseSaxParse"/>
+
+        <activity android:name="com.frandog.training_03_rssread.UseXML">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

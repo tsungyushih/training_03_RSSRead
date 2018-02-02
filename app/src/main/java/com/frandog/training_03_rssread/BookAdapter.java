@@ -15,12 +15,11 @@ import java.util.List;
 
 public class BookAdapter extends BaseAdapter {
     private LayoutInflater inflater;
-    List<Book> books = null;
+    List<Book> books=null;
 
-    public BookAdapter(Context context,List<Book> books)
-    {
-        inflater = LayoutInflater.from(context);
-        this.books = books;
+    public BookAdapter(Context context,List<Book> books){
+        inflater=LayoutInflater.from(context);
+        this.books=books;
     }
 
     @Override
@@ -39,33 +38,36 @@ public class BookAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View arg1, ViewGroup parent) {
+    public View getView(int arg0, View arg1, ViewGroup arg2) {
         ViewHolder viewHolder;
-        if(arg1 == null)
-        {
-            arg1 = inflater.inflate(R.layout.book_data,null);
-            viewHolder = new ViewHolder();
-            viewHolder.bookNameTxt = arg1.findViewById(R.id.bookNameTxt);
-            viewHolder.publishersTxt = arg1.findViewById(R.id.publishersTxt);
-            viewHolder.priceTxt = arg1.findViewById(R.id.priceTxt);
+        if(arg1==null){
+            arg1=inflater.inflate(R.layout.book_data, null);
+            viewHolder=new ViewHolder();
+            viewHolder.bookNameTxt=(TextView)arg1.findViewById(R.id.bookNameTxt);
+            viewHolder.publishersTxt=(TextView)arg1.findViewById(R.id.publishersTxt);
+            viewHolder.priceTxt=(TextView)arg1.findViewById(R.id.priceTxt);
             arg1.setTag(viewHolder);
+        }else{
+            viewHolder=(ViewHolder)arg1.getTag();
         }
-        else
-        {
-            viewHolder =(ViewHolder) arg1.getTag();
-        }
+//		String name1="";
+//		String publ1="";
+//		String price1="";
+//		name1=books.get(arg0).name;
+//		publ1=books.get(arg0).publishers;
+//		price1=books.get(arg0).price;
 
-        viewHolder.bookNameTxt.setText(books.get(position).name);
-        viewHolder.publishersTxt.setText(books.get(position).publishers);
-        viewHolder.priceTxt.setText("NT."+books.get(position).price+" 元");
+        viewHolder.bookNameTxt.setText(books.get(arg0).name);
+        viewHolder.publishersTxt.setText(books.get(arg0).publishers);
+        viewHolder.priceTxt.setText("NT."+books.get(arg0).price+" 元");
 
         return arg1;
     }
 
-    private class ViewHolder
-    {
+    private class ViewHolder{
         TextView bookNameTxt;
         TextView publishersTxt;
         TextView priceTxt;
     }
+
 }

@@ -8,9 +8,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="讀取XML資料"/>
+
+    <Button
+        android:id="@+id/saxbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用SAX" />
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="使用SAX"
-        android:id="@+id/saxbtn"/>
+        android:text="使用DOM剖析"
+        android:id="@+id/dombtn"/>
 
 </LinearLayout>
