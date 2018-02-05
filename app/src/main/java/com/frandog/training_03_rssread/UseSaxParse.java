@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -57,19 +58,16 @@ public class UseSaxParse extends Activity {
         try{
 
 //test  卡到這，自己下if，發現"file.xml"好像是空的，目前想不到該怎麼辦
-            File file = new File(getFilesDir(),"file.xml");
+            File file = new File(getFilesDir(),"file.txt");
             Log.d("==========FileDir",getFilesDir().toString());
+            InputStream is;
+            is = new FileInputStream(file);
 
-            if(UseSaxParse.class.getClassLoader().getResourceAsStream("file.xml") != null)
+            if(file != null)
             {
-                FileOutputStream outputStream;
 
-                try {
-                    outputStream = openFileOutput("file.xml", Context.MODE_PRIVATE);
-                    outputStream.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                books = SAXParseXML.readXML(is);
+
 
             }
             else
